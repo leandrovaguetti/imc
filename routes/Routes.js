@@ -28,11 +28,12 @@ class Routes extends IRoutes{
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));  
+app.use(cors());      
 } // finaliza construtor
 
   get(){
       app.get('/', (req, res) => {
-      res.send('Rest API IfMaisSaude');
+      res.send('Rest API IMC');
       });
       app.get('/user', userController.show);
 
